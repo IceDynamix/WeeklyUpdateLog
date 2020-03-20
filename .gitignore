@@ -1,0 +1,4 @@
+node_modules/
+.clasp.json
+_constants.ts
+_emailTemplate.html

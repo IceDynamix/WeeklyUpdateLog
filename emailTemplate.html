@@ -1,0 +1,29 @@
+<p>
+    Dear person,<br>
+    you will find the weekly changelog in this email.
+</p>
+
+<? for (x of BODY.getListItems()) { ?>
+<div style="margin-left: <?= x.getNestingLevel() * 40 ?>px;">
+    <? if (x.getNestingLevel() == 0) {?>
+    <b>
+        <? } ?>
+        <?= `- ${x.getText()}` ?><br>
+        <? if (x.getNestingLevel() == 0) {?>
+    </b>
+    <? } ?>
+</div>
+<? } ?>
+
+<p>
+    Regards<br>
+    IceDynamix
+</p>
+
+<ul>
+    <li>Troblecodings: <?= TROBLECODINGS_LINK ?></li>
+    <li>Sprint Log: <?= SPRINT_LOG_LINK ?></li>
+    <li>Burndown: <?= BURNDOWN_LINK ?></li>
+</ul>
+
+<p><em>This email was generated automatically.</em></p>
