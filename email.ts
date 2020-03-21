@@ -1,10 +1,8 @@
 function sendEmail(): void {
-    let emailSubject = makeEmailSubject();
-    let emailContent = generateHtmlContent();
+    let emailSubject: string = makeEmailSubject();
+    let emailContent: string = generateHtmlContent();
 
     if (BODY.getListItems().length == 0 || RECIPIENT_EMAILS.length == 0) return;
-
-    Logger.log(emailContent);
 
     MailApp.sendEmail(RECIPIENT_EMAILS.join(","), emailSubject, emailContent, {
         htmlBody: emailContent,

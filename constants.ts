@@ -3,8 +3,9 @@
 const _RECIPIENT_EMAILS: string[] = ["example@email.com", "example2@email.com"];
 const _CC_EMAILS: string[] = ["example@email.com", "example2@email.com"];
 const _BCC_EMAILS: string[] = ["example@email.com", "example2@email.com"];
-const _SENDER_DISPLAY_NAME = "IceDynamix";
+const _SENDER_DISPLAY_NAME: string = "IceDynamix";
 
+// Links used in the email template
 const _TROBLECODINGS_LINK: string = "https://github.com/Troblecodings";
 const _SPRINT_LOG_LINK: string = "https://docs.google.com/spreadsheets/d/***";
 const _BURNDOWN_LINK: string = "https://docs.google.com/spreadsheets/d/***";

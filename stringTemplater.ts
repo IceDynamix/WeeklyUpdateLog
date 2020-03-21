@@ -4,12 +4,8 @@
  * @param info Dictionary, where each $key in the template will be replaced with the value
  */
 function fillTemplateString(template: string, info: object) {
-    let keys = Object.keys(info).sort(function(a, b) {
-        return b.length - a.length;
-    });
-
+    let keys: string[] = Object.keys(info).sort((a: string, b: string) => b.length - a.length);
     for (const key of keys) template = template.replace(new RegExp("\\$" + key, "g"), info[key]);
-
     return template;
 }
 
@@ -50,9 +46,5 @@ function mergeObjects() {
  */
 function padLeft(n: number, width: number = 2, padString: string = "0") {
     let str = n.toString();
-    if (width > str.length) {
-        return str;
-    } else {
-        return (padString.repeat(width) + str).slice(-width);
-    }
+    return width > str.length ? str : (padString.repeat(width) + str).slice(-width);
 }
