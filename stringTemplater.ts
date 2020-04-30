@@ -16,7 +16,7 @@ function fillTemplateString(template: string, info: object) {
 function createDateInfo(date: Date) {
     return {
         year: padLeft(date.getFullYear(), 4),
-        month: padLeft(date.getMonth()),
+        month: padLeft(date.getMonth() + 1), // January = 0
         day: padLeft(date.getDate()),
         hour: padLeft(date.getHours()),
         minute: padLeft(date.getMinutes()),
@@ -46,5 +46,5 @@ function mergeObjects() {
  */
 function padLeft(n: number, width: number = 2, padString: string = "0") {
     let str = n.toString();
-    return width > str.length ? str : (padString.repeat(width) + str).slice(-width);
+    return width > str.length ? (padString.repeat(width) + str).slice(-width) : str;
 }
